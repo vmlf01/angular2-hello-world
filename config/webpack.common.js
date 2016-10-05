@@ -141,8 +141,35 @@ module.exports = function(options) {
          */
         {
           test: /\.css$/,
-          loaders: ['to-string-loader', 'css-loader']
+          loaders: ['to-string-loader', 'css-loader'],
+          exclude: [/bootstrap.*\.css/, /font-awesome.*\.css/]
         },
+
+
+        /*
+          * Use style-loader to inject bootstrap & font-awesome
+          * css styles into DOM
+          *
+          */
+        {
+          test: [/bootstrap.*\.css/, /font-awesome.*\.css/],
+          loaders: ['style-loader', 'css-loader']
+        },
+        // for font files
+        // the url-loader uses DataUrls.
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "url-loader?limit=10000&mimetype=application/font-woff"
+        },
+        // for font files
+        // the file-loader emits files.
+        {
+          test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loader: "file-loader"
+        },
+
+
+
 
         /* Raw loader support for *.html
          * Returns file content as string
