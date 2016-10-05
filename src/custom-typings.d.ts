@@ -44,11 +44,11 @@ import * as _ from 'lodash'
  */
 
 // support NodeJS modules without type definitions
-declare module '*';
+// commented because of https://github.com/AngularClass/angular2-webpack-starter/issues/833
+// declare module '*';
 
 // Extra variables that live on Global that will be replaced by webpack DefinePlugin
 declare var ENV: string;
-declare var HMR: boolean;
 declare var System: SystemJS;
 
 interface SystemJS {
@@ -57,7 +57,6 @@ interface SystemJS {
 
 interface GlobalEnvironment {
   ENV: string;
-  HMR: boolean;
   SystemJS: SystemJS;
   System: SystemJS;
 }
