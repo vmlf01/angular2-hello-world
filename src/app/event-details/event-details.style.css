@@ -1,0 +1,56 @@
+/*************************
+*******Home CSS******
+**************************/
+
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+#main-slider img {
+  width: 100%;
+}
+
+.event-details {
+  position: absolute;
+  background: none repeat scroll 0 0 #000000;
+  bottom: 13%;
+  float: left;
+  left: 0;
+  opacity: 0.8;
+  padding: 20px 80px 40px 160px;
+  right: inherit;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: left;
+}
+
+.event-details h2 {
+  font-size: 48px;
+}
+
+.event-details h4 {
+  font-size: 36px;
+}
+
+.event-details a {
+  font-size: 28px;
+  color: #2da1c5;
+}
+
+.event-details a:hover {
+  color: #2588a6;
+}
+
+.event-details a:hover i {
+  margin-left: 30px;
+}
+
+.event-details a i {
+  margin-left: 15px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
