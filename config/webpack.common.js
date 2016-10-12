@@ -20,7 +20,7 @@ const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin')
  * Webpack Constants
  */
 const METADATA = {
-  title: 'Angular2 Hello World',
+  title: 'Angular 2 Welcome Party',
   baseUrl: '/',
   isDevServer: helpers.isWebpackDevServer()
 };

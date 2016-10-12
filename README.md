@@ -1,4 +1,4 @@
-# Angular 2 Hello World sample
+# Angular 2 Welcome Party sample app
 
 An Angular 2 sample application based on Angular 2 Webpack starter kit from [AngularClass](https://angularclass.com).
 
@@ -19,10 +19,10 @@ This sample features:
 
 ```bash
 # clone our repo
-git clone https://github.com/vmlf01/angular2-hello-world.git
+git clone https://github.com/vmlf01/angular2-welcome-party.git
 
 # change directory to our repo
-cd angular2-hello-world
+cd angular2-welcome-party
 
 # install the repo with npm
 npm install
