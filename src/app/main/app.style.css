@@ -50,4 +50,5 @@ app-logo {
   z-index: 999;
   margin-left: 140px;
   margin-top: 40px;
+  cursor: pointer;
 }

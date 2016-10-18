@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DataService } from '../../providers';
 import { EventModel } from '../../models';
@@ -17,11 +18,11 @@ import { EventModel } from '../../models';
 export class HomeContainer {
     event: EventModel;
 
-    constructor(dataService: DataService) {
+    constructor(dataService: DataService, private router: Router) {
         this.event = dataService.getEvent();
     }
 
     onActionSelect(event) {
-        alert(`Let's do something with "${event}"!`);
+        this.router.navigate(['contact']);
     }
 }

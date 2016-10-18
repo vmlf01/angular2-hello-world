@@ -3,9 +3,6 @@
  */
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { DataService } from '../providers';
-import { EventModel } from '../models';
-
 /*
  * App Component
  * Top Level Component
@@ -17,23 +14,14 @@ import { EventModel } from '../models';
         './app.style.css'
     ],
     template: `
-    <app-logo></app-logo>
-    <event-details
-      [title]="event.title"
-      [images]="event.images"
-      callToAction="HOW COOL IS THAT?"
-      actionIcon="fa-comment"
-      (actionSelect)="onActionSelect($event)"></event-details>
+    <app-logo [routerLink]="['home']"></app-logo>
+
+    <!-- event details -->
+    <!--      or       -->
+    <!-- contact form  -->
+
+    <router-outlet></router-outlet>
   `
 })
 export class AppComponent {
-    event: EventModel;
-
-    constructor(dataService: DataService) {
-        this.event = dataService.getEvent();
-    }
-
-    onActionSelect(event) {
-        alert(`Let's do something with "${event}"!`);
-    }
 }
