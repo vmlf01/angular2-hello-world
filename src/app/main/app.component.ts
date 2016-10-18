@@ -22,7 +22,8 @@ import { EventModel } from '../models';
       [title]="event.title"
       [images]="event.images"
       callToAction="HOW COOL IS THAT?"
-      actionIcon="fa-comment"></event-details>
+      actionIcon="fa-comment"
+      (actionSelect)="onActionSelect($event)"></event-details>
   `
 })
 export class AppComponent {
@@ -30,5 +31,9 @@ export class AppComponent {
 
     constructor(dataService: DataService) {
         this.event = dataService.getEvent();
+    }
+
+    onActionSelect(event) {
+        alert(`Let's do something with "${event}"!`);
     }
 }
