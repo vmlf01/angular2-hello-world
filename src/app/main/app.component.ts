@@ -20,7 +20,7 @@ import { EventModel } from '../models';
     <app-logo></app-logo>
     <event-details
       [title]="event.title"
-      [image]="event.image"
+      [images]="event.images"
       callToAction="HOW COOL IS THAT?"
       actionIcon="fa-comment"></event-details>
   `

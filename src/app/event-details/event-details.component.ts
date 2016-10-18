@@ -11,7 +11,7 @@ export class EventDetailsComponent {
     @Input() title: string;
     @Input() callToAction: string;
     @Input() actionIcon: string;
-    @Input() image: string;
+    @Input() images: string[];
 
     onClick(event) {
         event.preventDefault();

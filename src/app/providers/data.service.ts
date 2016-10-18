@@ -10,7 +10,14 @@ export class DataService {
     getEvent(): EventModel {
         return {
             title: 'Angular 2 Welcome Party',
-            image: 'assets/images/slider/bg1.jpg'
+            images: [
+                'assets/images/slider/bg1.jpg',
+                'assets/images/slider/bg2.jpg',
+                'assets/images/slider/bg3.jpg',
+                'assets/images/slider/bg4.jpg',
+                'assets/images/slider/bg5.jpg',
+                'assets/images/slider/bg6.jpg'
+            ]
         };
     }
 }

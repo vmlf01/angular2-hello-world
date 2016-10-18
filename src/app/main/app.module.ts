@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppLogoComponent } from '../app-logo';
 import { EventDetailsComponent } from '../event-details';
+import { ImageSliderComponent } from '../image-slider';
 
 import { DataService } from '../providers';
 
@@ -16,7 +17,8 @@ import { DataService } from '../providers';
     declarations: [
         AppComponent,
         AppLogoComponent,
-        EventDetailsComponent
+        EventDetailsComponent,
+        ImageSliderComponent
     ],
     imports: [ // import Angular's modules
         BrowserModule
