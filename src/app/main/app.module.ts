@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 // App is our top level component
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import { APP_CONTAINERS } from '../containers';
     ],
     imports: [ // import Angular's modules
         BrowserModule,
-        RouterModule.forRoot(APP_ROUTES)
+        RouterModule.forRoot(APP_ROUTES),
+        FormsModule
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         DataService
