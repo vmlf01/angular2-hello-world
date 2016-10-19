@@ -9,6 +9,7 @@ import { AppLogoComponent } from '../app-logo';
 import { EventDetailsComponent } from '../event-details';
 import { ImageSliderComponent } from '../image-slider';
 import { ContactFormComponent } from '../contact-form';
+import { CommentsListComponent } from '../comments-list';
 
 import { DataService } from '../providers';
 import { EmailValidator } from '../providers';
@@ -28,7 +29,8 @@ import { APP_CONTAINERS } from '../containers';
         EventDetailsComponent,
         ImageSliderComponent,
         ContactFormComponent,
-        EmailValidator
+        EmailValidator,
+        CommentsListComponent
     ],
     imports: [ // import Angular's modules
         BrowserModule,

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { CommentModel } from '../../models';
+
 @Component({
     selector: 'contact-container',
     styles: [
@@ -31,16 +33,23 @@ import { Component } from '@angular/core';
                         <contact-form
                             (formSubmit)="onFormSubmit($event)"></contact-form>
                     </div>
+
+                    <div class="row" *ngIf="comments.length > 0">
+                        <comments-list
+                            [comments]="comments"></comments-list>
+                    </div>
                 </div>
             </div>
+
+
         </section>
         <!--/#contact-->
-
-
     `
 })
 export class ContactContainer {
-    onFormSubmit(formData) {
+    comments: CommentModel[] = [];
+
+    onFormSubmit(formData: CommentModel) {
         console.log('Form submitted:', formData);
     }
 }

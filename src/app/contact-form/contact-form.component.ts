@@ -1,5 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { CommentModel } from '../models';
+
 @Component({
     selector: 'contact-form',
     styleUrls: [
@@ -8,7 +10,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     templateUrl: './contact-form.template.html'
 })
 export class ContactFormComponent {
-    @Output() formSubmit = new EventEmitter();
+    @Output() formSubmit = new EventEmitter<CommentModel>();
     errors: any;
 
     onSubmit(form) {

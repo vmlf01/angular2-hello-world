@@ -24,6 +24,14 @@ const METADATA = webpackMerge(commonConfig({env: ENV}).metadata, {
   ENV: ENV
 });
 
+
+/**
+ * JUST KEEPING THINGS SIMPLE FOR THE DEMO!!!!!
+ * Starting the API server here
+ */
+const apiServer = require('./server.api');
+
+
 /**
  * Webpack configuration
  *
@@ -153,6 +161,12 @@ module.exports = function(options) {
         aggregateTimeout: 300,
         poll: 1000
       },
+
+      /* Send API requests on localhost to API server get around CORS */
+      proxy: {
+        '/api/*': 'http://localhost:4000'
+      },
+
       outputPath: helpers.root('dist')
     },
 
