@@ -21,8 +21,26 @@ import { Component } from '@angular/core';
         `
     ],
     template: `
-        <div>Contact Container</div>
+        <section id="contact">
+            <div class="contact-section">
+                <div class="megaphone">
+                    <img class="img-responsive" src="assets/images/megaphone.png" alt="">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <contact-form
+                            (formSubmit)="onFormSubmit($event)"></contact-form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/#contact-->
+
+
     `
 })
 export class ContactContainer {
+    onFormSubmit(formData) {
+        console.log('Form submitted:', formData);
+    }
 }

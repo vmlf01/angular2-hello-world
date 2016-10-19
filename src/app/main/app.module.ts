@@ -7,11 +7,13 @@ import { AppComponent } from './app.component';
 import { AppLogoComponent } from '../app-logo';
 import { EventDetailsComponent } from '../event-details';
 import { ImageSliderComponent } from '../image-slider';
+import { ContactFormComponent } from '../contact-form';
 
 import { DataService } from '../providers';
-import { APP_CONTAINERS } from '../containers';
-import { APP_ROUTES } from './app.routes';
+import { EmailValidator } from '../providers';
 
+import { APP_ROUTES } from './app.routes';
+import { APP_CONTAINERS } from '../containers';
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -19,11 +21,13 @@ import { APP_ROUTES } from './app.routes';
 @NgModule({
     bootstrap: [AppComponent],
     declarations: [
+        ...APP_CONTAINERS,
         AppComponent,
         AppLogoComponent,
         EventDetailsComponent,
         ImageSliderComponent,
-        ...APP_CONTAINERS
+        ContactFormComponent,
+        EmailValidator
     ],
     imports: [ // import Angular's modules
         BrowserModule,

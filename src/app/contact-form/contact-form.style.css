@@ -1,0 +1,61 @@
+/*************************
+******Contact CSS****
+**************************/
+
+.contact-section h2 {
+    text-transform:inherit;
+    color: #373737;
+}
+
+.contact-section h2 {
+    margin-bottom: 25px
+}
+
+.contact-section .form-control {
+  border-color: #ae750d;
+  box-shadow:none;
+  outline: 0 none;
+  border-radius: 0;
+  color: #797979;
+  font-size: 18px;
+}
+
+.contact-section .form-control:focus {
+  border-color: #ae750d;
+  border-width: 2px;
+}
+
+.contact-section input {
+  height: 44px;
+}
+
+.contact-section textarea {
+  height: 200px;
+  resize: none;
+}
+
+.contact-section .btn-primary {
+  background-color: #373737;
+  color: #f7ab24;
+  border: none;
+  font-size: 24px;
+  padding: 6px 42px;
+  margin-bottom: 110px;
+  margin-top: 10px
+}
+
+.contact-section .btn-primary:hover {
+  background-color: #212020;
+  color: #fff
+}
+
+.contact-section .form-control.ng-invalid {
+  border-right-color: red;
+  border-right-width: 10px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.error {
+  font-size: 28px;
+}
