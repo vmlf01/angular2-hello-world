@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
+import { CommentsService } from '../../providers';
 import { CommentModel } from '../../models';
 
 @Component({
@@ -34,7 +35,7 @@ import { CommentModel } from '../../models';
                             (formSubmit)="onFormSubmit($event)"></contact-form>
                     </div>
 
-                    <div class="row" *ngIf="comments.length > 0">
+                    <div class="row">
                         <comments-list
                             [comments]="comments"></comments-list>
                     </div>
@@ -46,10 +47,29 @@ import { CommentModel } from '../../models';
         <!--/#contact-->
     `
 })
-export class ContactContainer {
-    comments: CommentModel[] = [];
+export class ContactContainer implements OnInit {
+    comments: CommentModel[];
+
+    constructor(private commentsService: CommentsService) {
+    }
+
+    ngOnInit() {
+        this.commentsService.getComments()
+            .subscribe(
+                data => this.comments = data,
+                error => alert(error)
+            );
+    }
 
     onFormSubmit(formData: CommentModel) {
-        console.log('Form submitted:', formData);
+        this.commentsService.saveComment(formData)
+            .subscribe(newComment => {
+                // success callback
+                alert('New comment saved');
+                this.comments.push(newComment);
+            }, error => {
+                // error callback
+                alert(error);
+            });
     }
 }

@@ -23,7 +23,12 @@ export class CommentsService {
      * }
      */
     getComments() : Observable<CommentModel[]> {
-        return null;
+        return this.http.get(`${this.apiEndpoint}/comments`, { headers: this.getHeaders() })
+            .map((response) => response.json().data as CommentModel[])
+            .catch(this.handleServerError('Error getting list of comments!'))
+            .finally(() => {
+                console.log('get comments done');
+            });
     }
 
     /**
@@ -33,7 +38,12 @@ export class CommentsService {
      * }
      */
     saveComment(comment: CommentModel): Observable<CommentModel> {
-        return null;
+        return this.http.post(`${this.apiEndpoint}/comments`, JSON.stringify(comment), { headers: this.getHeaders() })
+            .map(response => response.json().data as CommentModel)
+            .catch(this.handleServerError('Error saving comment!'))
+            .finally(() => {
+                console.log('save comment done');
+            });
     }
 
     private getHeaders(): Headers {
